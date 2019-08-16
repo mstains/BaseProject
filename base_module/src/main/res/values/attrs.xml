@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomLinearLayout">
+        <attr name="backIcon" format="reference"/>
+        <attr name="titleBackground" format="color"/>
+        <attr name="titleText" format="reference"/>
+        <attr name="titleTextSize" format="dimension|reference"/>
+        <attr name="titleTextColor" format="color"/>
+        <attr name="hideBack" format="boolean"/>
+        <attr name="layout" format="reference"/>
+        <attr name="hideTitleLayout" format="boolean"/>
+    </declare-styleable>
+
+
+</resources>
