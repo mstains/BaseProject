@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.moran.base.view.CustomLinearLayout
 
+
 abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModuleClickListener {
 
     override fun onFinish() {
@@ -21,7 +22,7 @@ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModule
         if (rootView is CustomLinearLayout){
             rootView.clickListener = this
         }
-
+        initView()
     }
 
 
@@ -29,7 +30,13 @@ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModule
 
 
 
+    protected  fun initView(){
 
+    }
+
+    protected fun initData(){
+
+    }
 
     protected abstract fun getLayoutId():Int
 }
