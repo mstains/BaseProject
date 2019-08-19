@@ -1,15 +1,9 @@
 package com.moran.base.presenter
 
 
-class BasePresenter<V : BaseView> {
-
-    protected lateinit var baseView: V
+open class BasePresenter<V : BaseView>(val baseView: V) {
 
 
-
-    constructor(baseView: V){
-        this.baseView = baseView
-    }
 
 
 
