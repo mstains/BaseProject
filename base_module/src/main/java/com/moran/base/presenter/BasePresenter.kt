@@ -1,7 +1,7 @@
 package com.moran.base.presenter
 
 
-open class BasePresenter<V : BaseView>(val baseView: V) {
+open class BasePresenter<out V : BaseView>(val baseView: V) {
 
 
 

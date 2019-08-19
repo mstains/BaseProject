@@ -30,13 +30,9 @@ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModule
 
 
 
-    protected  fun initView(){
+    protected abstract fun initView()
 
-    }
-
-    protected fun initData(){
-
-    }
+    protected abstract fun initData()
 
     protected abstract fun getLayoutId():Int
 }
