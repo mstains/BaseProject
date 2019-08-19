@@ -4,7 +4,10 @@ import android.widget.Toast
 import com.moran.base.activity.CommActivity
 
 class MainActivity : CommActivity<MainPresenter>(),MainView {
+
+
     override fun initView() {
+
     }
 
     override fun initData() {

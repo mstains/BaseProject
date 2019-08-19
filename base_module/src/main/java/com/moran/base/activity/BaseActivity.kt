@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.moran.base.view.CustomLinearLayout
 
 
-abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModuleClickListener {
+ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModuleClickListener {
 
     override fun onFinish() {
         finish()
@@ -30,9 +30,13 @@ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModule
 
 
 
-    protected abstract fun initView()
+    protected open fun initView(){
 
-    protected abstract fun initData()
+    }
+
+    protected open fun initData(){
+
+    }
 
     protected abstract fun getLayoutId():Int
 }
