@@ -26,7 +26,7 @@ interface ApiServer {
      * @return Observable<ResponseBody> 返回请求信息
      */
     @POST
-    fun <T> postExecute(@Url url: String) : Observable<T>
+    fun  postExecute(@Url url: String) : Observable<ResponseBody>
 
 
     /**
@@ -38,7 +38,19 @@ interface ApiServer {
      * @return Observable<ResponseBody> 返回请求信息
      */
     @POST
-    fun <T> postExecute(@Url url: String,@Body body: RequestBody) : Observable<T>
+    fun  postExecute(@Url url: String,@Body body: RequestBody) : Observable<ResponseBody>
+
+
+    /**
+     * post请求
+     * @date: 2019/8/19 13:29
+     * @author: moran
+     * @param url 请求链接
+     * @param body 请求信息
+     * @return Observable<ResponseBody> 返回请求信息
+     */
+    @POST
+    fun  postExecute(@Url url: String,@Body body: String) : Observable<ResponseBody>
 
     /**
      * 单个文件上送
@@ -49,7 +61,7 @@ interface ApiServer {
      * @return Observable<ResponseBody> 返回请求信息
      */
     @Multipart
-    fun <T> updateMultipart(@Url url:String, @Part part : MultipartBody.Part) : Observable<T>
+    fun  updateMultipart(@Url url:String, @Part part : MultipartBody.Part) : Observable<ResponseBody>
 
     /**
      * 多文件上送
@@ -60,7 +72,7 @@ interface ApiServer {
      * @return Observable<ResponseBody> 返回请求信息
      */
     @Multipart
-    fun <T> updateListMultipart(@Url url:String,@Part listPart : List<MultipartBody.Part>): Observable<T>
+    fun  updateListMultipart(@Url url:String,@Part listPart : List<MultipartBody.Part>): Observable<ResponseBody>
 
 
 

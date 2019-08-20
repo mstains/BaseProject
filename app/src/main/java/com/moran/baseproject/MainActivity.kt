@@ -15,6 +15,7 @@ class MainActivity : CommActivity<MainPresenter>(),MainView {
     }
 
     override fun getInfo() {
+
         Toast.makeText(this,"nice",Toast.LENGTH_LONG).show()
     }
 

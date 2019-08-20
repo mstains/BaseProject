@@ -1,16 +1,25 @@
 package com.moran.baseproject
 
 import android.util.Log
-import com.moran.base.http.BaseObserver
+import com.moran.base.http.callback.BaseCallback
+import com.moran.base.http.callback.JsonCallBack
 import com.moran.base.presenter.BasePresenter
 
 class MainPresenter constructor(baseView: MainView) : BasePresenter<MainView>(baseView) {
 
 
     fun getInfo(){
-        getExecute ("https://my.oschina.net/u/2355512",object : BaseObserver<String>(){
-            override fun onSuccess(t: String) {
-                Log.e("ssss",t)
+
+        val url = "https://testapp.zjfae.com/ife/azj/pbupg.do?fh=VUPGAZJ000000J00"
+
+        val map = HashMap<String,String>()
+        map.set("platform", "1")
+        map.set("versionid", "1.6.48")
+
+        postExecute(url,map,AppUpDate::class.java,object : JsonCallBack<AppUpDate>(baseView){
+
+            override fun onSuccess(t: AppUpDate) {
+
             }
         })
     }

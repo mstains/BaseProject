@@ -20,7 +20,17 @@ abstract class CommActivity <P : BasePresenter<BaseView>>: BaseActivity(),BaseVi
     protected abstract fun createrPresenter():P
 
 
+    override fun onShowLoading() {
 
+    }
+
+    override fun onDismissLoad() {
+
+    }
+
+    override fun onError(errorMsg: String) {
+
+    }
 
 
 }
