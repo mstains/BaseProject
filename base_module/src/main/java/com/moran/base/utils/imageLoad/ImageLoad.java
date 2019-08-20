@@ -27,13 +27,16 @@ import java.io.File;
  */
 public class ImageLoad {
 
-    private static ImageLoad sGlideUtil = null;
+    private static ImageLoad instance = null;
 
-    public static ImageLoad getImageLoad() {
-        if (sGlideUtil == null) {
-            sGlideUtil = new ImageLoad();
+    public static ImageLoad getInstance() {
+        if (instance == null) {
+            synchronized (ImageLoad.class){
+                instance = new ImageLoad();
+            }
+
         }
-        return sGlideUtil;
+        return instance;
     }
 
     /**

@@ -13,6 +13,18 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+/**
+ *  @ProjectName:
+ * @Package:        com.moran.base.utils
+ * @ClassName:      StringUtils
+ * @Description:     StringUtils工具类
+ * @Author:         moran
+ * @CreateDate:     2019/8/20 10:18
+ * @UpdateUser:     更新者：
+ * @UpdateDate:     2019/8/20 10:18
+ * @UpdateRemark:   更新说明：
+ * @Version:        1.0
+ */
 public class StringUtils{
 
     private final static Pattern emailer = Pattern
