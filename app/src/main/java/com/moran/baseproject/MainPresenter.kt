@@ -8,8 +8,7 @@ class MainPresenter constructor(baseView: MainView) : BasePresenter<MainView>(ba
 
 
     fun getInfo(){
-
-       getExecute ("https://www.oschina.net/",object : BaseObserver<String>(){
+        getExecute ("https://my.oschina.net/u/2355512",object : BaseObserver<String>(){
             override fun onSuccess(t: String) {
                 Log.e("ssss",t)
             }

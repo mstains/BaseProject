@@ -16,7 +16,7 @@ interface ApiServer {
      * @return Observable<ResponseBody> 返回请求信息
      */
     @GET
-    fun <T> getExecute(@Url  url : String) : Observable<T>
+    fun  getExecute(@Url  url : String) : Observable<ResponseBody>
 
     /**
      * post请求

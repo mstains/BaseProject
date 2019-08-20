@@ -1,5 +1,6 @@
 package com.moran.base.presenter
 
+import android.util.Log
 import com.moran.base.http.ApiRetrofit
 import com.moran.base.http.ApiServer
 import com.moran.base.http.BaseObserver
@@ -21,15 +22,28 @@ open class BasePresenter<out V : BaseView>(val baseView: V) {
     }
 
 
-    fun <T : Any> getExecute(url:String,disposable: BaseObserver<T>){
+    fun <T> getExecute(url:String,disposable: BaseObserver<T>){
         if (compositeDisposable == null){
             compositeDisposable = CompositeDisposable()
         }
 
-        compositeDisposable!!.add(apiServer.getExecute<T>(url)
+        compositeDisposable!!.add(apiServer.getExecute(url)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(disposable))
+            .subscribeWith(object : DisposableObserver<ResponseBody>() {
+                override fun onStart() {
+
+                }
+                override fun onComplete() {
+                }
+                override fun onNext(t: ResponseBody) {
+                    Log.e("t",t.string())
+                    //disposable.onSuccess("23123131")
+                }
+
+                override fun onError(e: Throwable) {
+                }
+            }))
 
 //        compositeDisposable!!.add(apiServer.getExecute(url).subscribeOn(Schedulers.io())
 //            .observeOn(AndroidSchedulers.mainThread())
