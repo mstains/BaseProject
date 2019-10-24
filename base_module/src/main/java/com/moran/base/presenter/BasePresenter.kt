@@ -10,10 +10,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
-import okhttp3.MediaType
-import okhttp3.Request
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
+import okhttp3.*
 import org.json.JSONObject
 
 
@@ -80,8 +77,14 @@ open class BasePresenter<out V : BaseView>(val baseView: V) {
 
     fun <T> postExecute(url: String, map: HashMap<String, String>, clazz: Class<T>, jsonCallBack: JsonCallBack<T>){
 
-        val requestBody =   RequestBody.create(MediaType.parse("application/octet-stream"),JSONObject(map).toString())
+        val fromBuild : FormBody.Builder = FormBody.Builder()
 
+        for ((key,value) in map){
+            fromBuild.add(key,value)
+        }
+
+         val requestBody =   RequestBody.create(MediaType.parse("application/octet-stream"),JSONObject(map).toString())
+       // val requestBody =   fromBuild.build()
         if (compositeDisposable == null){
             compositeDisposable = CompositeDisposable()
         }

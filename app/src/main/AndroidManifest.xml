@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.moran.baseproject">
 
-
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
             android:allowBackup="true"
