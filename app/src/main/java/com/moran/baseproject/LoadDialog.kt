@@ -2,15 +2,15 @@ package com.moran.baseproject
 
 import android.content.Context
 import android.content.DialogInterface
-import android.widget.TextView
+import android.widget.Button
 import com.moran.base.dialog.BaseDialog
 
 class LoadDialog : BaseDialog {
 
 
-    private var cancel_btn: TextView? = null
+    private var cancel_btn: Button? = null
 
-    private var confirm_btn: TextView? = null
+    private var confirm_btn: Button? = null
 
     override fun getLayoutId(): Int {
 
@@ -48,16 +48,13 @@ class LoadDialog : BaseDialog {
 
     override fun initData() {
 
-
     }
 
     override fun isCancel(): Boolean {
 
-
         return false
 
     }
-
 
     constructor(context: Context) : super(context) {
 

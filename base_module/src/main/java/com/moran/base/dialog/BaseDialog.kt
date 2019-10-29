@@ -3,7 +3,6 @@ package com.moran.base.dialog
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
-import android.support.annotation.StyleRes
 import android.view.LayoutInflater
 import android.view.View
 import com.moran.base.R

@@ -46,21 +46,20 @@
                 android:layout_height="50dp"
                 android:orientation="horizontal" >
 
-            <TextView
+
+            <Button
                     android:id="@+id/cancel_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="取消"
-                    android:gravity="center"
                     android:background="@drawable/dialog_bg_shape"
+                    android:gravity="center"
+                    android:text="取消"
                     android:textColor="@color/colorRed"
                     android:textSize="15sp" />
 
-
-
-            <TextView
+            <Button
                     android:id="@+id/confirm_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"

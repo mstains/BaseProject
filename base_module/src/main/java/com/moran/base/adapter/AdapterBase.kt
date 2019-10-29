@@ -1,11 +1,11 @@
 package com.moran.base.adapter
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.recyclerview.widget.RecyclerView
 
 abstract  class  AdapterBase<T> constructor(context: Context,list: List<T>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
