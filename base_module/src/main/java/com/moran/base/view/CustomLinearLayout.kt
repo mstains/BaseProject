@@ -20,7 +20,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
 
     }
 
-
     /**
      * 布局
      * */

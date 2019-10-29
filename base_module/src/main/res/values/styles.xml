@@ -2,16 +2,29 @@
 <resources>
 
 
-    <!--BaseDialogfragment样式-->
-    <style name="BaseDialogFragmentStyle" parent="@android:style/Theme.Dialog">
+    <style name="mystyle" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
         <item name="android:windowFrame">@null</item>
-        <item name="android:windowSoftInputMode">adjustPan</item>
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <!-- 是否有背景色 -->
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@drawable/dialog_bg_shape</item>
+        <!-- 模糊 -->
         <item name="android:backgroundDimEnabled">true</item>
+        <!-- 遮罩层 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+
 
     </style>
+
+
+
+
+
 
 
 </resources>

@@ -12,21 +12,11 @@
 
 
 
-
-
-    <Button
-            android:id="@+id/dialog_button"
+    <com.moran.base.view.webView.WebViewWithProgress
+            android:id="@+id/web_View"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text="弹框"/>
-
-
-
-
-
-
-
-
+            android:layout_height="match_parent"
+            app:progressStyle="horizontal"/>
 
 
 

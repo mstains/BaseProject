@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--自定义布局-->
     <declare-styleable name="CustomLinearLayout">
-        <attr name="backIcon" format="reference"/>
-        <attr name="titleBackground" format="color"/>
-        <attr name="titleText" format="reference"/>
-        <attr name="titleTextSize" format="dimension|reference"/>
-        <attr name="titleTextColor" format="color"/>
-        <attr name="hideBack" format="boolean"/>
-        <attr name="layout" format="reference"/>
-        <attr name="hideTitleLayout" format="boolean"/>
+        <!--左上角返回键-->
+        <attr name="backIcon" format="reference" />
+        <!--title背景颜色-->
+        <attr name="titleBackground" format="color" />
+        <!--title文字-->
+        <attr name="titleText" format="reference" />
+        <!--文字大小-->
+        <attr name="titleTextSize" format="dimension|reference" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="hideBack" format="boolean" />
+        <attr name="layout" format="reference" />
+        <attr name="hideTitleLayout" format="boolean" />
+    </declare-styleable>
+
+
+    <!--自定义WebView-->
+    <declare-styleable name="WebViewWithProgress">
+        <attr name="progressStyle" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="circle" value="1" />
+        </attr>
+        <attr name="barHeight" format="dimension" />
+
+        <attr name="progressDrawable" format="reference"/>
+
     </declare-styleable>
 
 
