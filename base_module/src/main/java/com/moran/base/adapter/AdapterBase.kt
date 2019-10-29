@@ -84,16 +84,4 @@ abstract  class  AdapterBase<T> constructor(context: Context,list: List<T>): Rec
 
 
 
-    protected fun getScreenWidth(context : Context) : Int{
-
-        val dm = DisplayMetrics()
-
-        val vm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-
-        vm.defaultDisplay.getMetrics(dm)
-
-
-        return dm.widthPixels
-
-    }
 }

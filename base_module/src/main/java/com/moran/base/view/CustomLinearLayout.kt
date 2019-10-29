@@ -76,7 +76,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
         titleLayoutBackground = arrayType.getColor(R.styleable.CustomLinearLayout_titleBackground, resources.getColor(R.color.colorRed))
         backIcon = arrayType.getResourceId(R.styleable.CustomLinearLayout_backIcon, R.drawable.back)
         titleText = arrayType.getResourceId(R.styleable.CustomLinearLayout_titleText, R.string.app_name)
-        //titleTextSize = arrayType.getDimensionPixelOffset(R.styleable.baseViewGroup_titleTextSize,R.dimen.titleTextSize)
         titleTextColor = arrayType.getColor(
             R.styleable.CustomLinearLayout_titleTextColor,
             resources.getColor(android.R.color.white)

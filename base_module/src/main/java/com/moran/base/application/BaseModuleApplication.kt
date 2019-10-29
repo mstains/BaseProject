@@ -6,7 +6,6 @@ import okhttp3.OkHttpClient
  abstract class BaseModuleApplication : Application() {
 
 
-
     override fun onCreate() {
         super.onCreate()
         init()
