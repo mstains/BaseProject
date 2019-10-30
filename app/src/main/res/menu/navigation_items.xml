@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/home"
+            android:icon="@mipmap/home_icon"
+            android:title="首页"/>
+
+    <item
+            android:id="@+id/list"
+            android:icon="@mipmap/cart_full"
+            android:title="列表"/>
+
+
+
+    <item
+            android:id="@+id/user"
+            android:icon="@mipmap/user"
+            android:title="用户"/>
+
+
+    <item
+            android:id="@+id/more"
+            android:icon="@mipmap/settings"
+            android:title="更多"/>
+
+</menu>

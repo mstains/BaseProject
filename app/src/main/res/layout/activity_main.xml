@@ -5,26 +5,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:hideBack="true"
+        app:hideTitleLayout="true"
         app:titleBackground="@color/colorPrimary"
         app:titleText="@string/home_title"
+        android:fitsSystemWindows="true"
         tools:context=".MainActivity">
 
 
-    <Button
-            android:id="@+id/dialog_bt"
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text="弹框" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/white">
+
+        
 
 
-    <com.moran.base.view.webView.WebViewWithProgress
-            android:id="@+id/web_View"
+    </FrameLayout>
+
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            app:progressStyle="horizontal" />
-
-
+            android:layout_height="56dp"
+            android:layout_gravity="end"
+            app:itemIconTint="@drawable/selector_tab_color"
+            app:itemTextColor="@drawable/selector_tab_color"
+            app:labelVisibilityMode="labeled"
+            app:itemBackground="@android:color/transparent"
+            app:menu="@menu/navigation_items" />
 
 
 

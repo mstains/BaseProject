@@ -54,6 +54,9 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
     private var isHideBack: Boolean = false
 
 
+    private var hideTitleLayout = false
+
+
     var clickListener: BaseModuleClickListener? = null
 
 
@@ -81,25 +84,33 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
             resources.getColor(android.R.color.white)
         )
         isHideBack = arrayType.getBoolean(R.styleable.CustomLinearLayout_hideBack, false)
+
+        hideTitleLayout = arrayType.getBoolean(R.styleable.CustomLinearLayout_hideTitleLayout,false)
+
         arrayType.recycle()
         initData()
     }
 
-    init {
-        LayoutInflater.from(context).inflate(baseLayoutId, this, true)
-    }
+
 
     private fun initData() {
-        rl_base_title_menu_.setBackgroundColor(titleLayoutBackground)
-        iv_base_title_setting.setImageResource(backIcon)
-        tv_base_title_text.setText(titleText)
-        tv_base_title_text.setTextColor(titleTextColor)
+        if (!hideTitleLayout){
+            LayoutInflater.from(context).inflate(baseLayoutId, this, true)
+            rl_base_title_menu_.setBackgroundColor(titleLayoutBackground)
+            iv_base_title_setting.setImageResource(backIcon)
+            tv_base_title_text.setText(titleText)
+            tv_base_title_text.setTextColor(titleTextColor)
 
-        ll_base_title_back.setOnClickListener(this)
+            ll_base_title_back.setOnClickListener(this)
 
-        if (isHideBack) {
-            iv_base_title_setting.visibility = View.GONE
+            if (isHideBack) {
+                iv_base_title_setting.visibility = View.GONE
+            }
+
         }
+
+
+
     }
 
 
