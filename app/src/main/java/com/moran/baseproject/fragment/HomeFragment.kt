@@ -1,6 +1,7 @@
 package com.moran.baseproject.fragment
 
 import com.moran.base.fragment.BaseFragment
+import com.moran.base.utils.LogUtils
 import com.moran.baseproject.R
 
 class HomeFragment : BaseFragment() {
@@ -19,4 +20,6 @@ class HomeFragment : BaseFragment() {
         return R.layout.fragment_home_layout
 
     }
+
+
 }

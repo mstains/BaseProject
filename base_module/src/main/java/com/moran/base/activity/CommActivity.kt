@@ -13,7 +13,6 @@ abstract class CommActivity <P : BasePresenter<BaseView>>: BaseActivity(),BaseVi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         presenter = createrPresenter()
-        initData()
     }
 
 

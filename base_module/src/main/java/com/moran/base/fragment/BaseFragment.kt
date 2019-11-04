@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-
+import com.moran.base.utils.LogUtils
 
 
 /**
@@ -50,7 +50,15 @@ import androidx.fragment.app.Fragment
     }
 
 
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        LogUtils.e(this::class.java.simpleName+"onHiddenChanged",hidden.toString())
+    }
 
+
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+    }
      /**
       * 寻找控件id
       * @method

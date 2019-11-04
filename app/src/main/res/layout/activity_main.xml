@@ -8,7 +8,6 @@
         app:hideTitleLayout="true"
         app:titleBackground="@color/colorPrimary"
         app:titleText="@string/home_title"
-        android:fitsSystemWindows="true"
         tools:context=".MainActivity">
 
 
