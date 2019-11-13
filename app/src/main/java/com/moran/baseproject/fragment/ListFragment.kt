@@ -17,4 +17,9 @@ class ListFragment : BaseFragment(){
         return R.layout.fragment_list_layout
 
     }
+
+
+
+
+
 }

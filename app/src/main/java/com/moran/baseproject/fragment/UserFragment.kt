@@ -6,6 +6,7 @@ import com.moran.baseproject.R
 class UserFragment : BaseFragment() {
 
     override fun initData() {
+
     }
 
     override fun initView() {
@@ -18,4 +19,6 @@ class UserFragment : BaseFragment() {
         return R.layout.fragment_user_layout
 
     }
+
+
 }

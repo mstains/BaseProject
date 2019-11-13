@@ -22,6 +22,7 @@ class Utils {
     companion object {
 
         private var instance: Utils? = null
+
         fun getInstance() : Utils{
 
             if (instance == null) {
@@ -54,6 +55,27 @@ class Utils {
         vm.defaultDisplay.getMetrics(dm)
 
         return dm.widthPixels
+
+    }
+
+
+    /**
+     * 获取屏幕宽度
+     * @method
+     * @date: 2019-11-03 20:46
+     * @author: moran
+     * @param context 上下文对象
+     * @return 屏幕宽度
+     */
+    fun getScreenHeight(context: Context): Int {
+
+        val dm = DisplayMetrics()
+
+        val vm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+
+        vm.defaultDisplay.getMetrics(dm)
+
+        return dm.heightPixels
 
     }
 

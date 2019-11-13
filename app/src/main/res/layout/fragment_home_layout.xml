@@ -9,11 +9,15 @@
 
 
     <TextView
+            android:id="@+id/jump"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="45dp"
             android:gravity="center"
             android:text="@string/home_fragment_title"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
+
+
+
 
 </LinearLayout>

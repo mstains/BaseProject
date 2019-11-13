@@ -18,7 +18,7 @@ abstract class BaseDialog {
 
     private var mRootView: View? = null
 
-    protected var dialog: Dialog? = null
+    protected var dialog: Dialog
 
 
     //dimAmount在0.0f和1.0f之间，0.0f完全不暗，即背景是可见的，1.0f时候，背景全部变黑暗。
@@ -40,7 +40,7 @@ abstract class BaseDialog {
         }
 
 
-     var cancel_btnClickListener: DialogInterface.OnClickListener? = null
+      var cancel_btnClickListener: DialogInterface.OnClickListener? = null
         set(value) {
             field = value
         }
@@ -83,6 +83,7 @@ abstract class BaseDialog {
             val params = window.attributes
             params.alpha = alpha
             params.dimAmount = dimAmount
+
 
             window.attributes = params
         }

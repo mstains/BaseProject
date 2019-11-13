@@ -3,7 +3,6 @@ package com.moran.baseproject
 import android.view.MenuItem
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 import com.moran.base.activity.CommActivity
 import com.moran.base.fragment.BaseFragment
 import com.moran.baseproject.fragment.HomeFragment
@@ -106,6 +105,12 @@ class MainActivity : CommActivity<MainPresenter>(), MainView {
         }
         mCurrentFragment = baseFragment
 
+    }
+
+
+    override fun isTranslucent(): Boolean {
+
+        return true
     }
 
 
