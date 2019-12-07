@@ -1,4 +1,4 @@
-package com.moran.base.presenter
+package com.moran.base.activity.presenter
 
 interface BaseView {
 

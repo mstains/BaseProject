@@ -4,10 +4,12 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import com.moran.base.R
+import com.moran.base.utils.LogUtils
 import kotlinx.android.synthetic.main.base_title.view.*
 
 class CustomLinearLayout : LinearLayout, View.OnClickListener {
@@ -38,7 +40,7 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
     /**
      * title文字大小
      * */
-    private var titleTextSize: Int = resources.getDimensionPixelSize(R.dimen.titleTextSize)
+    private var titleTextSize: Int = 16
 
     private var titleTextColor: Int = resources.getColor(android.R.color.white)
 
@@ -78,7 +80,13 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
         baseLayoutId = arrayType.getResourceId(R.styleable.CustomLinearLayout_layout, R.layout.base_title)
         titleLayoutBackground = arrayType.getColor(R.styleable.CustomLinearLayout_titleBackground, resources.getColor(R.color.colorRed))
         backIcon = arrayType.getResourceId(R.styleable.CustomLinearLayout_backIcon, R.drawable.back)
-        titleText = arrayType.getResourceId(R.styleable.CustomLinearLayout_titleText, R.string.app_name)
+        titleText = arrayType.getResourceId(R.styleable.CustomLinearLayout_titleText, R.string.must_set_title)
+        titleTextSize = arrayType.getInt(R.styleable.CustomLinearLayout_titleTextSize,titleTextSize)
+
+        LogUtils.i("title文字大小", titleTextSize)
+
+
+
         titleTextColor = arrayType.getColor(
             R.styleable.CustomLinearLayout_titleTextColor,
             resources.getColor(android.R.color.white)
@@ -100,6 +108,8 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
             iv_base_title_setting.setImageResource(backIcon)
             tv_base_title_text.setText(titleText)
             tv_base_title_text.setTextColor(titleTextColor)
+
+            tv_base_title_text.setTextSize(TypedValue.COMPLEX_UNIT_SP,titleTextSize.toFloat())
 
             ll_base_title_back.setOnClickListener(this)
 

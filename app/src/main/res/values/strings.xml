@@ -10,5 +10,7 @@
 
     <string name="more_fragment_title">更多</string>
 
+    <string name="login_title">登录</string>
+
 
 </resources>

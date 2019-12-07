@@ -1,4 +1,4 @@
-package com.moran.base.presenter
+package com.moran.base.activity.presenter
 
 import com.google.gson.Gson
 import com.moran.base.http.ApiRetrofit

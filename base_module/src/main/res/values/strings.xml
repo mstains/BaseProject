@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">base_module</string>
+    <string name="must_set_title">请设置标题</string>
 </resources>

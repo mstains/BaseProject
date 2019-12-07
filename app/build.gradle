@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     buildToolsVersion "29.0.1"
@@ -15,6 +17,14 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        //添加如下配置 开启annotation processor
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+
     }
     buildTypes {
         release {
@@ -39,6 +49,14 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
     implementation 'com.android.support:multidex:1.0.3'
-    //单元测试
-    testImplementation 'org.mockito:mockito-core:2.25.1'
+
+
+    //动态权限申请
+    implementation "org.permissionsdispatcher:permissionsdispatcher:$latest_version"
+    kapt "org.permissionsdispatcher:permissionsdispatcher-processor:$latest_version"
+
+
+    implementation 'org.projectlombok:lombok:1.16.8'  //添加lombok依赖
+    implementation 'org.glassfish:javax.annotation:10.0-b28' //java注解
+
 }

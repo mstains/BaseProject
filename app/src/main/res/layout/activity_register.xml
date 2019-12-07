@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.moran.base.view.CustomLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:orientation="vertical"
         tools:context=".activity.login.RegisterActivity">
 
 
-    <include
-            layout="@layout/include_base_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -23,11 +17,11 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="21dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="45dp"
                 android:layout_marginRight="21dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
 
             <TextView
@@ -46,6 +40,7 @@
                     android:gravity="center|left"
                     android:hint="请输入手机号"
                     android:paddingLeft="21dp"
+                    android:singleLine="true"
                     android:textColor="@android:color/black"
                     android:textColorHint="#A5A5A5"
                     android:textSize="16sp" />
@@ -63,11 +58,11 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="21dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
 
             <TextView
@@ -86,8 +81,9 @@
                     android:background="@android:color/white"
                     android:gravity="center|left"
                     android:paddingLeft="21dp"
-                    android:textColorHint="#A5A5A5"
+                    android:singleLine="true"
                     android:textColor="@android:color/black"
+                    android:textColorHint="#A5A5A5"
                     android:textSize="16sp" />
 
 
@@ -97,8 +93,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="发送短信验证码"
-                    android:textSize="12sp"
-                    android:textColor="#1539FF" />
+                    android:textColor="#1539FF"
+                    android:textSize="12sp" />
 
 
         </LinearLayout>
@@ -114,11 +110,11 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="21dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
 
             <TextView
@@ -138,16 +134,20 @@
                     android:gravity="center|left"
                     android:hint="6-16位，必含数字和字母"
                     android:paddingLeft="21dp"
-                    android:textColorHint="#A5A5A5"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
                     android:textColor="@android:color/black"
+                    android:textColorHint="#A5A5A5"
                     android:textSize="16sp" />
 
 
             <CheckBox
+                    android:id="@+id/ck_passWord_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
-                    android:button="@drawable/register_check" />
+                    android:button="@drawable/register_check"
+                    android:paddingRight="5dp" />
 
 
         </LinearLayout>
@@ -163,11 +163,11 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="21dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
 
             <TextView
@@ -186,16 +186,20 @@
                     android:background="@android:color/white"
                     android:gravity="center|left"
                     android:paddingLeft="21dp"
-                    android:textColorHint="#A5A5A5"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
                     android:textColor="@android:color/black"
+                    android:textColorHint="#A5A5A5"
                     android:textSize="16sp" />
 
 
             <CheckBox
+                    android:id="@+id/ck_confirm_passWord_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
-                    android:button="@drawable/register_check" />
+                    android:button="@drawable/register_check"
+                    android:paddingRight="5dp" />
 
 
         </LinearLayout>
@@ -211,75 +215,44 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:gravity="center"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="21dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
+
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="如有邀请人"
-                    android:textColor="#ffb0b0b0"
-                    android:textSize="15sp" />
+                    android:text="邀请人手机号"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
-            <ImageView
+
+            <EditText
+                    android:id="@+id/ed_referrer_phoneNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:src="@mipmap/referrer" />
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center|left"
+                    android:hint="请输入邀请人手机号"
+                    android:paddingLeft="21dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#A5A5A5"
+                    android:textSize="16sp" />
+
 
         </LinearLayout>
 
-        <LinearLayout
+        <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="invisible">
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="21dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginRight="21dp"
-                    android:layout_marginBottom="10dp">
-
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="邀请人手机号"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp" />
-
-
-                <EditText
-                        android:id="@+id/ed_referrer_phoneNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@android:color/white"
-                        android:gravity="center|left"
-                        android:hint="请输入邀请人手机号"
-                        android:paddingLeft="21dp"
-                        android:textColorHint="#A5A5A5"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp" />
-
-
-            </LinearLayout>
-
-            <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="21dp"
-                    android:layout_marginRight="21dp"
-                    android:background="#B8B9BF" />
-
-
-        </LinearLayout>
-
+                android:layout_height="1dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginRight="21dp"
+                android:background="#B8B9BF" />
 
 
     </LinearLayout>
@@ -292,36 +265,43 @@
 
 
         <LinearLayout
+                android:id="@+id/select_agreement_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="28dp"
                 android:layout_marginRight="28dp"
                 android:gravity="center|left"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
 
             <CheckBox
+                    android:id="@+id/read_agreement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
-                    android:button="@drawable/registration_agreement_check" />
+                    android:button="@drawable/registration_agreement_check"
+                    android:checked="true"
+                    android:clickable="false" />
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="我已阅读并同意"
                     android:textColor="#ff292929"
-                    android:textSize="13sp"
-                    android:layout_marginLeft="2dp"
-                    android:text="我已阅读并同意"/>
+                    android:textSize="13sp" />
 
 
             <TextView
+                    android:id="@+id/tv_open_agreement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#1539FF"
-                    android:textSize="13sp"
                     android:layout_marginLeft="2dp"
-                    android:text="《浙金中心购买卡的时间》"/>
+                    android:text="《浙金中心开户协议》"
+                    android:textColor="#1539FF"
+                    android:textSize="13sp" />
 
         </LinearLayout>
 
@@ -335,8 +315,8 @@
                 android:layout_marginRight="26dp"
                 android:layout_marginBottom="43dp"
                 android:background="@drawable/register_button_bg"
-                android:text="立即注册"
                 android:gravity="center"
+                android:text="立即注册"
                 android:textColor="#ffffffff"
                 android:textSize="17sp" />
 
@@ -345,6 +325,7 @@
 
 
     <TextView
+            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -358,4 +339,4 @@
             android:textSize="13sp" />
 
 
-</LinearLayout>
+</com.moran.base.view.CustomLinearLayout>

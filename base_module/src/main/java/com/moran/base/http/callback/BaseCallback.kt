@@ -1,6 +1,6 @@
 package com.moran.base.http.callback
 
-import com.moran.base.presenter.BaseView
+import com.moran.base.activity.presenter.BaseView
 
 abstract class BaseCallback<T> constructor(val baseView: BaseView) {
 

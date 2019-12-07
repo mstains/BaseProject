@@ -1,26 +1,14 @@
 package com.moran.base.activity
 
-import android.app.Activity
-import android.graphics.Color
-import android.os.Build
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
-import android.view.View.*
-import android.view.ViewGroup
-import android.view.WindowManager
-import android.view.WindowManager.LayoutParams.*
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 import com.moran.base.R
-import com.moran.base.utils.LogUtils
-import com.moran.base.utils.Utils
 import com.moran.base.view.CustomLinearLayout
-import com.walkud.rom.checker.Rom
-import com.walkud.rom.checker.RomIdentifier
 
 
 abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModuleClickListener {
@@ -50,17 +38,9 @@ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModule
             rootView.clickListener = this
         }
         setContentView(rootView)
-        //initStatusBar()
         initView()
         initData()
     }
-
-
-
-//    private fun initStatusBar(){
-//        window.decorView.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or SYSTEM_UI_FLAG_LAYOUT_STABLE
-//        window.statusBarColor = statusBarColor()
-//    }
 
 
 
@@ -137,6 +117,20 @@ abstract class BaseActivity : AppCompatActivity(), CustomLinearLayout.BaseModule
     }
 
     protected abstract fun getLayoutId(): Int
+
+
+    fun baseStartActivity(clazz: Class<Any>){
+
+        var intent = getIntent()
+
+        if (intent == null){
+            intent = Intent()
+        }
+        intent.setClass(this,clazz::class.java)
+
+        startActivity(intent)
+    }
+
 
 
 

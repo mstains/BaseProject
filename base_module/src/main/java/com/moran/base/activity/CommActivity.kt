@@ -1,8 +1,8 @@
 package com.moran.base.activity
 
 import android.os.Bundle
-import com.moran.base.presenter.BasePresenter
-import com.moran.base.presenter.BaseView
+import com.moran.base.activity.presenter.BasePresenter
+import com.moran.base.activity.presenter.BaseView
 
 abstract class CommActivity <P : BasePresenter<BaseView>>: BaseActivity(),BaseView {
 

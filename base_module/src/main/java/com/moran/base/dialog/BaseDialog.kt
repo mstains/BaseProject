@@ -5,42 +5,46 @@ import android.content.Context
 import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.view.Window
 import com.moran.base.R
 
 abstract class BaseDialog {
 
-
     private var inflater: LayoutInflater
 
-    protected var context: Context? = null
+    protected var context: Context
 
     private var themeResId: Int = R.style.mystyle
 
     private var mRootView: View? = null
 
-    protected var dialog: Dialog
+    open var dialog: Dialog? = null
 
 
     //dimAmount在0.0f和1.0f之间，0.0f完全不暗，即背景是可见的，1.0f时候，背景全部变黑暗。
-     var dimAmount = 0.5f
-        set(value) {
-            field = value
-        }
+    private var dimAmount = 0.5f
+    fun setDimAmount (dimAmount : Float){
+        this.dimAmount = dimAmount
+    }
 
     //透明度 1不透明，0全透明
-     var alpha = 1f
+    private var alpha = 1f
+    fun setAlpha(alpha : Float){
+
+        this.alpha = alpha
+
+    }
+
+
+
+    var confirm_btnClickListener: DialogInterface.OnClickListener? = null
         set(value) {
             field = value
         }
 
 
-     var confirm_btnClickListener: DialogInterface.OnClickListener? = null
-        set(value) {
-            field = value
-        }
-
-
-      var cancel_btnClickListener: DialogInterface.OnClickListener? = null
+    var cancel_btnClickListener: DialogInterface.OnClickListener? = null
         set(value) {
             field = value
         }
@@ -55,14 +59,13 @@ abstract class BaseDialog {
 
         inflater = LayoutInflater.from(context)
 
-        dialog = createDialog()
 
     }
 
 
-    private fun createDialog(): Dialog {
+    fun createDialog() {
 
-        val dialog = Dialog(context!!, themeResId)
+        dialog = Dialog(context, themeResId)
 
 
         mRootView = inflater.inflate(getLayoutId(), null)
@@ -71,24 +74,25 @@ abstract class BaseDialog {
 
         initData()
 
-        dialog.setContentView(mRootView)
 
-        dialog.setCanceledOnTouchOutside(isCancel())
+        dialog!!.setCanceledOnTouchOutside(isCancel())
 
-        dialog.setCancelable(isCancel())
+        dialog!!.setCancelable(isCancel())
 
-        val window = dialog.window
+        dialog!!.setContentView(mRootView)
+
+        val window = dialog!!.window
+
 
         if (window != null) {
             val params = window.attributes
             params.alpha = alpha
             params.dimAmount = dimAmount
-
-
+            params.width = ViewGroup.LayoutParams.MATCH_PARENT
             window.attributes = params
-        }
 
-        return dialog
+            initWindow(window)
+        }
     }
 
     //布局id
@@ -104,6 +108,11 @@ abstract class BaseDialog {
     protected abstract fun isCancel(): Boolean
 
 
+    protected  fun initWindow(window: Window){
+
+    }
+
+
     fun <V : View> findViewById(viewId: Int): V {
 
         return mRootView!!.findViewById(viewId) as V
@@ -112,7 +121,17 @@ abstract class BaseDialog {
 
 
     fun showDialog() {
+        if (dialog != null){
 
-        dialog!!.show()
+            dialog!!.show()
+        }
+
+    }
+
+    fun onDismiss(){
+        if (dialog != null){
+
+            dialog!!.dismiss()
+        }
     }
 }
