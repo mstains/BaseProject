@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.moran.base.utils.LogUtils
 
 
@@ -40,6 +43,16 @@ abstract class BaseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         LogUtils.e("onCreate", "onCreate")
+
+        lifecycle.addObserver(object : LifecycleObserver{
+
+
+            @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+            fun onResume(){
+
+            }
+
+        })
     }
 
 
@@ -59,48 +72,12 @@ abstract class BaseFragment : Fragment() {
 
         initData()
 
+        setStatusBar()
+
 
         return mRootView
 
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        LogUtils.e("onActivityCreated", "onActivityCreated")
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        LogUtils.e("onViewCreated", "onViewCreated")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        LogUtils.e("onStart", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        LogUtils.e("onResume", "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        LogUtils.e("onPause", "onPause")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        LogUtils.e("onDestroy", "onDestroy")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        LogUtils.e("onDestroyView", "onDestroyView")
-    }
-
-
-
     /**
      * 寻找控件id
      * @method
@@ -115,10 +92,6 @@ abstract class BaseFragment : Fragment() {
     }
 
 
-    open fun isImageBanner(): Boolean {
-
-        return false
-    }
 
     /**
      * 初始化参数
@@ -152,4 +125,7 @@ abstract class BaseFragment : Fragment() {
     abstract fun getLayoutId(): Int
 
 
+    open fun setStatusBar(){
+
+    }
 }

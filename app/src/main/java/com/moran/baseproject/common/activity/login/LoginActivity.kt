@@ -1,9 +1,9 @@
-package com.moran.baseproject.activity.login
+package com.moran.baseproject.common.activity.login
 
 import com.moran.base.activity.CommActivity
 import com.moran.baseproject.R
-import com.moran.baseproject.activity.login.presenter.LoginPresenter
-import com.moran.baseproject.activity.login.presenter.LoginView
+import com.moran.baseproject.common.activity.login.presenter.LoginPresenter
+import com.moran.baseproject.common.activity.login.presenter.LoginView
 
 class LoginActivity : CommActivity<LoginPresenter>(),LoginView {
     override fun createrPresenter(): LoginPresenter {

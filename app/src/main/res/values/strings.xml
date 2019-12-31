@@ -1,5 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
     <string name="app_name">BaseProject</string>
+
+
+
+    <string name="leapfrog">跳过</string>
+
+
     <string name="home_title">首页</string>
 
     <string name="home_fragment_title">首页</string>
@@ -11,6 +17,11 @@
     <string name="more_fragment_title">更多</string>
 
     <string name="login_title">登录</string>
+
+
+    <string name="product_list">认购列表</string>
+
+    <string name="transfer_list">转让列表</string>
 
 
 </resources>

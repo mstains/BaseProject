@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -10,14 +11,11 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/fingerprint_shape"
+            android:gravity="center"
             android:orientation="vertical">
-
-
-
 
 
         <ImageView
@@ -48,19 +46,22 @@
         <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/colorOrange"/>
+                android:background="@color/colorOrange" />
 
 
         <TextView
                 android:id="@+id/tv_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:text="取消"
                 android:gravity="center"
+                android:text="取消"
                 android:textColor="@android:color/black" />
 
 
     </LinearLayout>
+
+
+
 
 
 </LinearLayout>

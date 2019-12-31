@@ -1,9 +1,8 @@
-package com.moran.baseproject.fragment
+package com.moran.baseproject.common.fragment
 
 import android.widget.ImageView
-import com.bumptech.glide.Glide
 import com.moran.base.fragment.BaseFragment
-import com.moran.base.utils.imageLoad.ImageLoad
+import com.moran.base.utils.StatusBarUtil
 import com.moran.baseproject.R
 
 class MoreFragment : BaseFragment() {
@@ -32,9 +31,8 @@ class MoreFragment : BaseFragment() {
     }
 
 
+    override fun setStatusBar() {
 
-    override fun isImageBanner(): Boolean {
-
-        return true
+        StatusBarUtil.setColor(getActivity(),resources.getColor(R.color.colorRed),0)
     }
 }

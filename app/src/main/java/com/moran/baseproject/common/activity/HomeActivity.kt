@@ -1,14 +1,18 @@
-package com.moran.baseproject.activity
+package com.moran.baseproject.common.activity
 
 import android.view.MenuItem
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.moran.base.activity.BasicsActivity
 import com.moran.base.fragment.BaseFragment
+import com.moran.base.utils.LogUtils
 import com.moran.baseproject.R
-import com.moran.baseproject.fragment.HomeFragment
-import com.moran.baseproject.fragment.ListFragment
-import com.moran.baseproject.fragment.MoreFragment
-import com.moran.baseproject.fragment.UserFragment
+import com.moran.baseproject.common.fragment.HomeFragment
+import com.moran.baseproject.common.fragment.ListFragment
+import com.moran.baseproject.common.fragment.MoreFragment
+import com.moran.baseproject.common.fragment.UserFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : BasicsActivity() {
@@ -68,6 +72,23 @@ class HomeActivity : BasicsActivity() {
         })
 
         selectNavigationFragment(HomeFragment())
+
+        lifecycle.addObserver(object : LifecycleObserver{
+
+
+            @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+            fun connectListener(){
+
+                LogUtils.i("界面Resume")
+
+            }
+
+            @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+            fun disconnectListener(){
+
+                LogUtils.i("界面Push")
+            }
+        })
     }
 
 
@@ -83,7 +104,7 @@ class HomeActivity : BasicsActivity() {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
 
             if (baseFragment.isAdded) {
-                fragmentTransaction.hide(mCurrentFragment!!).show(baseFragment).commit()
+                fragmentTransaction.hide(mCurrentFragment!!).show(baseFragment).setMaxLifecycle(baseFragment,Lifecycle.State.CREATED).commit()
 
             }else{
                 if (mCurrentFragment == null){
@@ -97,4 +118,6 @@ class HomeActivity : BasicsActivity() {
         mCurrentFragment = baseFragment
 
     }
+
+
 }

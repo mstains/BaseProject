@@ -4,7 +4,7 @@
     <item
             android:id="@+id/home"
             android:icon="@mipmap/home_icon"
-            android:title="首页"/>
+            android:title="首页" />
 
     <item
             android:id="@+id/list"

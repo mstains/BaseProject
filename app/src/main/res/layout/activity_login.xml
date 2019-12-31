@@ -8,7 +8,11 @@
         app:titleBackground="@color/colorBuild"
         app:titleText="@string/login_title"
         app:titleTextSize="18"
-        tools:context=".activity.login.LoginActivity">
+        tools:context=".common.activity.login.LoginActivity">
+
+
+
+
 
 
 

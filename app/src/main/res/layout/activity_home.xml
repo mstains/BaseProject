@@ -8,7 +8,8 @@
         app:titleBackground="@color/colorBuild"
         app:titleText="@string/home_title"
         app:titleTextSize="16"
-        tools:context=".activity.HomeActivity">
+        app:hideTitleLayout="true"
+        tools:context=".common.activity.HomeActivity">
 
 
 

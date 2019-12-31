@@ -1,9 +1,7 @@
-package com.moran.baseproject.application
+package com.moran.baseproject.common.application
 
 import androidx.multidex.MultiDex
 import com.moran.base.activity.BaseModuleApplication
-import com.moran.base.utils.LogUtils
-import java.io.File
 
 
 class BaseApplication : BaseModuleApplication() {

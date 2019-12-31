@@ -12,9 +12,11 @@ class ImageLoad {
 
         fun loadImage(context: Context,url: String,imageView: ImageView){
 
-            Glide.with(context).load(url).into(imageView)
 
+            Glide.with(context).load(url).into(imageView)
         }
+
+
 
 
     }

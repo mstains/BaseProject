@@ -1,4 +1,4 @@
-package com.moran.baseproject.activity.login.presenter
+package com.moran.baseproject.common.activity.login.presenter
 
 import com.moran.base.activity.presenter.BasePresenter
 

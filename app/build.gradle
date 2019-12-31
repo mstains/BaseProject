@@ -46,8 +46,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':base_module')
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+//    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+//    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
     implementation 'com.android.support:multidex:1.0.3'
 
 
@@ -58,5 +58,10 @@ dependencies {
 
     implementation 'org.projectlombok:lombok:1.16.8'  //添加lombok依赖
     implementation 'org.glassfish:javax.annotation:10.0-b28' //java注解
+
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+    implementation "androidx.room:room-ktx:$room_version"
 
 }

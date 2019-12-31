@@ -1,4 +1,4 @@
-package com.moran.baseproject.common
+package com.moran.baseproject.common.dialog
 
 import android.content.Context
 import android.widget.TextView

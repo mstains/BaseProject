@@ -23,6 +23,7 @@ public class TinyUtils {
 
 
     public static TinyUtils getInstance() {
+
         synchronized (TinyUtils.class){
             if (tinyUtils == null){
                 tinyUtils = new TinyUtils();

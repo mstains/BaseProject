@@ -8,6 +8,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import com.airbnb.lottie.LottieAnimationView
 import com.moran.base.R
 import com.moran.base.utils.LogUtils
 import kotlinx.android.synthetic.main.base_title.view.*
@@ -59,7 +60,12 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
     private var hideTitleLayout = false
 
 
-    var clickListener: BaseModuleClickListener? = null
+      var clickListener: onFinishClickListener? = null
+
+
+    private var lottieAnimationView : LottieAnimationView? = null
+
+
 
 
 
@@ -86,7 +92,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
         LogUtils.i("title文字大小", titleTextSize)
 
 
-
         titleTextColor = arrayType.getColor(
             R.styleable.CustomLinearLayout_titleTextColor,
             resources.getColor(android.R.color.white)
@@ -99,9 +104,9 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
         initData()
     }
 
-
-
     private fun initData() {
+
+
         if (!hideTitleLayout){
             LayoutInflater.from(context).inflate(baseLayoutId, this, true)
             rl_base_title_menu_.setBackgroundColor(titleLayoutBackground)
@@ -120,11 +125,20 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
         }
 
 
+        lottieAnimationView = LottieAnimationView(context)
+
+
+
+
+
+
+
+
 
     }
 
 
-    interface BaseModuleClickListener {
+    interface onFinishClickListener {
         fun onFinish()
     }
 }

@@ -1,6 +1,7 @@
-package com.moran.baseproject.fragment
+package com.moran.baseproject.common.fragment
 
 import com.moran.base.fragment.BaseFragment
+import com.moran.base.utils.StatusBarUtil
 import com.moran.baseproject.R
 
 class UserFragment : BaseFragment() {
@@ -20,5 +21,10 @@ class UserFragment : BaseFragment() {
 
     }
 
+
+    override fun setStatusBar() {
+
+        StatusBarUtil.setColor(getActivity(),resources.getColor(R.color.colorBuild),0)
+    }
 
 }

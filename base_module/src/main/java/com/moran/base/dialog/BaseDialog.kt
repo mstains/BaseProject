@@ -75,11 +75,11 @@ abstract class BaseDialog {
         initData()
 
 
-        dialog!!.setCanceledOnTouchOutside(isCancel())
+        dialog?.setCanceledOnTouchOutside(isCancel())
 
-        dialog!!.setCancelable(isCancel())
+        dialog?.setCancelable(isCancel())
 
-        dialog!!.setContentView(mRootView)
+        dialog?.setContentView(mRootView)
 
         val window = dialog!!.window
 
@@ -123,7 +123,7 @@ abstract class BaseDialog {
     fun showDialog() {
         if (dialog != null){
 
-            dialog!!.show()
+            dialog?.show()
         }
 
     }
@@ -131,7 +131,7 @@ abstract class BaseDialog {
     fun onDismiss(){
         if (dialog != null){
 
-            dialog!!.dismiss()
+            dialog?.dismiss()
         }
     }
 }

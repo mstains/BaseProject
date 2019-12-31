@@ -1,4 +1,4 @@
-package com.moran.baseproject.activity.login
+package com.moran.baseproject.common.activity.login
 
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
