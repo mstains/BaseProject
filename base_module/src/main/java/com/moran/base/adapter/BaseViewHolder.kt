@@ -22,15 +22,6 @@ class BaseViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
 
-//    fun <T : View> getView(viewId: Int): T {
-//        var view: View? = views.get(viewId)
-//        if (view == null) {
-//            view = itemView.findViewById(viewId)
-//            views.put(viewId, view)
-//        }
-//        return view as T?
-//    }
-
 
 
 }

@@ -4,7 +4,6 @@ import androidx.room.Room
 import com.moran.base.fragment.BaseFragment
 import com.moran.base.utils.StatusBarUtil
 import com.moran.baseproject.R
-import com.moran.baseproject.data.AppDatabase
 
 class HomeFragment : BaseFragment() {
 

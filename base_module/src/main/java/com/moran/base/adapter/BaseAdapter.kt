@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.recyclerview.widget.RecyclerView
 
-abstract  class  AdapterBase<T> constructor(context: Context,list: List<T>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+abstract  class  BaseAdapter<T> constructor(context: Context, list: List<T>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     protected  var list : List<T>
