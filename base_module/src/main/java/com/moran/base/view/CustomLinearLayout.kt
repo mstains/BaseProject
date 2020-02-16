@@ -3,12 +3,10 @@ package com.moran.base.view
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
-import com.airbnb.lottie.LottieAnimationView
 import com.moran.base.R
 import com.moran.base.utils.LogUtils
 import kotlinx.android.synthetic.main.base_title.view.*
@@ -63,7 +61,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
       var clickListener: onFinishClickListener? = null
 
 
-    private var lottieAnimationView : LottieAnimationView? = null
 
 
 
@@ -125,7 +122,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
         }
 
 
-        lottieAnimationView = LottieAnimationView(context)
 
 
 
