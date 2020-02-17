@@ -60,14 +60,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
 
       var clickListener: onFinishClickListener? = null
 
-
-
-
-
-
-
-
-
     constructor(context: Context) : this(context, null) {
 
     }
@@ -103,7 +95,6 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
 
     private fun initData() {
 
-
         if (!hideTitleLayout){
             LayoutInflater.from(context).inflate(baseLayoutId, this, true)
             rl_base_title_menu_.setBackgroundColor(titleLayoutBackground)
@@ -118,18 +109,7 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
             if (isHideBack) {
                 iv_base_title_setting.visibility = View.GONE
             }
-
         }
-
-
-
-
-
-
-
-
-
-
 
     }
 
