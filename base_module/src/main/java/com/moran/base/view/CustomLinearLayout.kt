@@ -95,6 +95,8 @@ class CustomLinearLayout : LinearLayout, View.OnClickListener {
 
     private fun initData() {
 
+
+        
         if (!hideTitleLayout){
             LayoutInflater.from(context).inflate(baseLayoutId, this, true)
             rl_base_title_menu_.setBackgroundColor(titleLayoutBackground)
