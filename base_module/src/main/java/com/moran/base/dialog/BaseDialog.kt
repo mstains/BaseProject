@@ -12,6 +12,8 @@ import com.moran.base.R
 abstract class BaseDialog {
 
 
+
+
     private var inflater: LayoutInflater
 
     protected var context: Context
